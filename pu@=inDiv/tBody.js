@@ -1,0 +1,54 @@
+function tBody(x) {
+    var ds = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Procsent | Developers </title>
+    </head>
+    <body>
+        <div class="header">
+            <div class="main_header">
+                <div class="settings_procsent"> </div>
+                <div class="logo_procsent">
+                    <div class="logo_procsent_text"> Procsent </div>
+                    <div class="logo_procsent_img"> <img src="/styleMain/logo5.png" width="50px"/> </div> 
+                </div>
+            </div>
+            <div class="">
+    
+            </div>
+        </div>
+        <div class="rootBody">
+            <div class="nt sec">
+    
+            </div>
+            <div class="new sec">
+    
+            </div>
+            <div class="acs sec">
+    
+            </div>
+            <div class="lastAd sec">
+    
+            </div>
+        </div>
+        <div class="rootEnd">
+            <div class="">
+    
+            </div>
+            <div class="">
+                
+            </div>
+        </div>
+        <script type="text/javascript" src="./tInPrJs/" ></script>
+    </body>
+    </html>`
+    return ds
+}
+
+module.exports = {
+    tBody
+}

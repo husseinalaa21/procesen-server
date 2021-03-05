@@ -1,0 +1,48 @@
+const express = require('express');
+const router = express.Router();
+const path = require('path')
+const kcehcn = require('./maGet.js')
+const xcehcn = require('./paGet.js')
+const DivBodyMenu = require('../pu@=inDiv/tBody.js')
+const { readFileSync } = require('fs');
+const { join } = require('path');
+const dhs = readFileSync(join(__dirname,'./jsonDataUsersX.json'), 'utf8');
+
+router.get('/', (req, res ) => {
+    var uNs = req.query.username
+    var pAs = req.query.pass
+        if(uNs.length < 20 && uNs.length > 0) {
+            if(pAs.length < 20 && pAs.length > 0){
+
+                var xNum = Math.floor(Math.random() * 20);
+                try {
+                    //var cxreal = req.headers["x-real-ip"]
+                    var cxreal = '129.3121.001'
+                } catch (err) {
+                    return res.redirect('/')
+                }
+                
+                var usn = kcehcn.c_cT(uNs,pAs,dhs,xNum)
+                var xusn = usn[0]
+                // نشفر الكلمة و من ثم نفك تشفيرها للتأكد من عدم الاختراق
+                var xnsu = usn[1]
+                var rVerf = xcehcn.c_pT(xnsu,usn[2],usn[3],cxreal,dhs)
+                if (xusn == true){
+                    if(rVerf == true){
+                        //res.sendFile(path.join(__dirname, '../pu@=inDiv/tBody.js'))
+                        res.send(DivBodyMenu.tBody(usn[2]))
+                    } else {
+                        return res.redirect('/?wxp=wtoacclg')
+                    }
+                } else {
+                    return res.redirect('/?wxp=wtoacclog')
+                }
+            } else {
+                return res.redirect('/?wxp=wtoacclog')
+            }
+        } else {
+            return res.redirect('/?wxp=wtoacclog')
+        }
+})
+
+module.exports = router;
