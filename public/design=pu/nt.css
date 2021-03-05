@@ -1,0 +1,38 @@
+.nt {
+    border-left: 3px solid red;
+}
+
+.ntTitle {
+    font-size: 20px;
+    padding: 0  0 10px 2px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 0;
+    border-bottom: 1px solid #28527a;
+}
+.ntContainer {
+    padding: 10px;
+    direction: rtl;
+}
+
+.ntf{
+    background-color: #bbdfc8;
+    color: #043d3a;
+    padding: 10px;
+    border-radius: 3px;
+}
+
+.ntLast {
+    direction: ltr;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    padding-top: 13px;
+}
+.ntfTitle {
+    font-size: 20px;
+    padding: 0 3px 10px 3px;
+    border: 0;
+    border-bottom: 1px solid #043d3a;
+}
+.ntfInfTitle {
+    padding: 10px 3px 10px 3px;
+}

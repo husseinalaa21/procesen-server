@@ -1,0 +1,109 @@
+.proofTitle{
+    font-size: 23px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 13px 10px 13px 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    border:0;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.prordeored {
+    margin-top: 14px;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+.pordTitle {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
+.wordsVote {
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    margin: auto;
+    padding-top: 6px;
+}
+.wwth {
+    padding: 6px 10px 6px 10px;
+}
+.WedThis {
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%), 0 4px 10px rgb(0 0 0 / 10%);
+    border-radius: 8px;
+    min-width: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+.powerPoint {
+    border-radius: 1px;
+    height: 6px;
+    margin: 1px;
+    width: 10px;
+    -webkit-tap-highlight-color: transparent;
+    white-space: nowrap;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-indent: initial;
+    -webkit-font-smoothing: antialiased;
+    color: rgba(0,0,0,0.87);
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    text-size-adjust: 100%;
+}
+.powerPointBlue {
+    background-color: #1a73e8;
+}
+.powerPointRed {
+    background-color: #dee1e6;
+}
+.powerVotes {
+    display: flex;
+    padding-top: 5px;
+}
+.infoThisWorld {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: auto;
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 19px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%), 0 4px 10px rgb(0 0 0 / 10%);
+}
+.sectionsSetThis {
+    display: flex;
+    justify-content: space-between;
+    max-width: 400px;
+    margin: auto;
+    padding: 16px;
+    margin-top: 10px;
+}
+
+.sectionsSetThis div {
+    padding: 10px;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 10%), 0 4px 10px rgb(0 0 0 / 10%);
+    border-radius: 4px;
+}
+
+.proofClick {
+    background-color: #6ddccf;
+    color: #f6f6f6;
+    cursor: pointer;
+}
+.deleteClick {
+    background-color: #ef4f4f;
+    color: #f6f6f6;
+    cursor: pointer;
+}
+.editClick {
+    background-color: #cdd0cb;
+    color: #f6f6f6;
+    cursor: pointer;
+}

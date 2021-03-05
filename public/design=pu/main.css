@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-color: #f8f8f8;
+}
+.header-main {
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 25px;
+}
+
+.header {
+    width: 90%;
+    padding: 5px;
+    background-color: #fff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+.shMain {
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+}
+
+.logo_procsent {
+    display: flex;
+    font-size: 26px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+.logo_procsent_text {
+    color: #195458;
+    padding: 14px 0px 8px 10px;
+}
+.icoPage {
+    padding-top: 6px;
+}
+.settingProcsent {
+    padding-top: 12px;
+    padding-right: 6px;
+}
+.settingsIcon {
+    padding: 5px;
+    background-color: #f6f5f5b4;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.6s;
+}
+.settingsIcon:hover {
+    background-color: #edeef7;
+    outline: 0;
+}
+.settingsIcon:focus {
+    background-color: #edeef7;
+    outline: 0;
+}
+
+.sec {
+    padding: 20px;
+    border: 0;
+    background-color: rgba(255, 255, 255, 0.753);
+    border-bottom: 1px solid #edeef7;
+}

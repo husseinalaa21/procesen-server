@@ -60,7 +60,7 @@ function tBody(x) {
                 </div>
             </form>
         </div>
-        <div class="endPage">
+        <!--<div class="endPage">
             <div class="endOne">
                 <div class="endOne_one">
                     <div> <a>Call us</a> </div>
@@ -72,7 +72,7 @@ function tBody(x) {
                 </div>
             </div>
             <div class="endTow"> Procsent © 2020 - 2021 </div>
-        </div>
+        </div>-->
     </body>
     <script type="text/javascript" src="jsMain/java.js"></script>
     
