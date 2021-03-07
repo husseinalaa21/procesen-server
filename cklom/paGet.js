@@ -25,9 +25,9 @@ function c_pT(n, x, y, realIp) {
                 var obj = zaw[n]
                 if (obj.hasOwnProperty('coLog') == true) {
                     var cUrl = zaw[n].coLog
-                    return [true, cUrl, { id: x, ip: realIp, nam: n, tp: tpass } , zaw]
+                    return [true, cUrl, { ip: realIp, nam: n, tp: tpass } , zaw]
                 } else {
-                    return [true, true, { id: x, ip: realIp, nam: n, tp: tpass } , zaw]
+                    return [true, true, { ip: realIp, nam: n, tp: tpass } , zaw]
                 }
             }
         } else {

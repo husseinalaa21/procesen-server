@@ -1,38 +1,174 @@
 function tBody(x) {
-    var ds = `
-    <!DOCTYPE html>
+    var ds = `<!DOCTYPE html>
     <html lang="en">
+    
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Procsent | Developers </title>
+        <link rel="stylesheet" href="/design=pu/main.css">
+        <link rel="stylesheet" href="/design=pu/nt.css">
+        <link rel="stylesheet" href="/design=pu/sbp.css">
+        <link rel="stylesheet" href="/design=pu/tols.css">
+        <link rel="stylesheet" href="/design=pu/pro.css">
+        <link rel="stylesheet" href="/design=pu/addWs.css">
+        <title> Procsent | `+x.un+`</title>
     </head>
+    
     <body>
-        <div class="header">
-            <div class="main_header">
-                <div class="settings_procsent"> </div>
+        <div class="header-main">
+            <div class="header shMain">
                 <div class="logo_procsent">
                     <div class="logo_procsent_text"> Procsent </div>
-                    <div class="logo_procsent_img"> <img src="/styleMain/logo5.png" width="50px"/> </div> 
+                    <div class="logo_procsent_img"> <img src="/styleMain/logo5.png" class="icoPage" height="50px"
+                            alt="icon" />
+                    </div>
                 </div>
-            </div>
-            <div class="">
-    
+                <div class="settingProcsent">
+                    <img src="/design=pu/sliders-h-solid.svg" class="settingsIcon" width="22px" alt="">
+                </div>
             </div>
         </div>
         <div class="rootBody">
             <div class="nt sec">
-    
+                <div class="ntTitle">
+                    Notifications
+                </div>
+                <div class="ntContainer">
+                    <!-- Notification One -->
+                    <div class="ntf">
+                        <div class="ntfs">
+                            <div class="ntfTitle"> معلومات الأمان </div>
+                            <div class="ntfInfTitle"> أخر عمليات تسجيل الدخول بالاضافة الى محاولات تسجيل الدخول </div>
+                        </div>
+                        <div class="ntx">
+                            <div class="ntfxCon">
+                                <div class="ntxLoad" id="ntxLoadInfo">
+                                    <div class="infoGet" id="infoGet">
+                                        <img src="/design=pu/envelope-open-text-solid.svg" alt="" height="40px"
+                                            class="infoLogInPassIcon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ntLast">
+                            last update 2021/3/4
+                        </div>
+                    </div>
+                    <!-- End -->
+                </div>
             </div>
-            <div class="new sec">
-    
+            <div class="tols sec">
+                <div class="tolsTitle">
+                    Tols
+                </div>
+                <div class="tolsCon">
+                    <!-- TOLS SECTIOM ONE -->
+                    <div class="tolsXse">
+                        <div class="tolsXseTitle">
+                            <div class="titleTtoo">
+                                Front-End DataBesse
+                            </div>
+                            <div class="conTtoo">
+                                Get data front-end curently from server
+                            </div>
+                        </div>
+                        <div class="tolsXseCon">
+                            <!-- Add Data here -->
+                            <div class="ntxLoad" id="getDataFrontEnd">
+                                <div class="infoGet" id="infogetDataFrontEnd">
+                                    <img src="/design=pu/envelope-open-text-solid.svg" alt="" height="40px"
+                                        class="infoLogInPassIcon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END SECTION ONE -->
+                    <!-- TOLS SECTIOM TWO -->
+                    <div class="tolsXse">
+                        <div class="tolsXseTitle">
+                            <div class="titleTtoo">
+                                Back-End DataBesse
+                            </div>
+                            <div class="conTtoo">
+                                Get data back-end curently from server
+                            </div>
+                        </div>
+                        <div class="tolsXseCon">
+                            <!-- Add Data here -->
+                            <div class="ntxLoad" id="getDataBackEnd">
+                                <div class="infoGet" id="infogetDataBackEnd">
+                                    <img src="/design=pu/envelope-open-text-solid.svg" alt="" height="40px"
+                                        class="infoLogInPassIcon">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END SECTION  -->
+                </div>
             </div>
-            <div class="acs sec">
-    
+            <div class="Proof sec">
+                <div class="proofTitle">
+                    Contributions
+                </div>
+                <div class="proofCon">
+                    <!-- SETION ONE PROOF -->
+                    <div class="prordeored">
+                        <div class="poedTitleCon">
+                            <div class="pordTitle">
+                                Similar word
+                            </div>
+                            <div class="peodCon">
+                                <div class="wordsVote">
+                                    <div class="originWord wwth WedThis"> اتى </div>
+                                    <div class="transEmo wwth">
+                                        <img src="/design=pu/exchange-alt-solid.svg" alt="change" width="22px">
+                                    </div>
+                                    <div class="copyWord wwth WedThis"> جاء </div>
+                                </div>
+                                <div class="infoThisWorld">
+                                    <div class="infoVote">
+                                        Number of times voting : 300
+                                    </div>
+                                    <div class="powerVotes">
+                                        <div class="powerPoint powerPointBlue"></div>
+                                        <div class="powerPoint powerPointBlue"></div>
+                                        <div class="powerPoint powerPointBlue"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="proofConContainer">
+                            <!-- ADD DATA HERE -->
+                            <div class="sectionsSetThis">
+                                <div class="proofClick">
+                                    Proof
+                                </div>
+                                <div class="deleteClick">
+                                    Delete
+                                </div>
+                                <div class="editClick">
+                                    Edite
+                                </div>
+                            </div>
+                            <div class="optionsThis">
+                                <div class="skipButton">
+                                    Skip
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End -->
+                </div>
             </div>
-            <div class="lastAd sec">
-    
+            <div class="addWs sec">
+                <div class="addEditeTitle">
+                    Editing of words and sentences
+                </div>
+                <div class="addEditCon">
+                    <!-- Add and edit sectionst -->
+                    <!-- End -->
+                </div>
             </div>
         </div>
         <div class="rootEnd">
@@ -40,11 +176,12 @@ function tBody(x) {
     
             </div>
             <div class="">
-                
+    
             </div>
         </div>
-        <script type="text/javascript" src="./tInPrJs/" ></script>
+        <script type="text/javascript" src="/scripts=pu/script.js"></script>
     </body>
+    
     </html>`
     return ds
 }

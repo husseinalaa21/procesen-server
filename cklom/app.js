@@ -4,7 +4,6 @@ const path = require('path')
 const kcehcn = require('./maGet.js')
 const xcehcn = require('./paGet.js')
 const webLog = require('./webLog.js')
-const DivBodyMenu = require('../pu@=inDiv/tBody.js')
 
 router.get('/', (req, res) => {
     var uNs = req.query.username
@@ -27,18 +26,17 @@ router.get('/', (req, res) => {
             var rVerf = xcehcn.c_pT(xnsu, usn[2], usn[3], cxreal)
             if (xusn == true) {
                 if (rVerf[0] == true) {
-                    var webLoff = webLog.tPoData(rVerf[1] ,rVerf[3], rVerf[2])
-                    console.log(rVerf[1])
-                    if (webLoff == true) {
+                    var webLoff = webLog.tPoData(rVerf[1], rVerf[3], rVerf[2])
+                    if (webLoff[0] == true) {
                         //res.sendFile(path.join(__dirname, '../pu@=inDiv/tBody.js'))
+                        //res.send(DivBodyMenu.tBody(usn[2]))
                         // return him to main page
-                        res.send(DivBodyMenu.tBody(usn[2]))
+                        res.cookie('inb', webLoff[1]);
+                        res.redirect('/home')
                     } else {
-                        console.log(webLoff)
                         return res.redirect('/?wxp=wtoacclg')
                     }
                 } else {
-                    console.log(webLoff)
                     return res.redirect('/?wxp=wtoacclg')
                 }
             } else {

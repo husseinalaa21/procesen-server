@@ -9,7 +9,6 @@ function tPoData(urCo, da, ilf) {
     var npc = ilf.nam
     var ppc = ilf.tp
     var ibpc = ilf.ip
-    var idpc = ilf.id
 
     var xSimp = ['#', '$', '!', '£']
     var xWord = ['A', 'a', 'C', 'B', 'b', 'c', 'X', 'x', 'S', 'W', 'q', 'Q', 'I', 'Z', 'z', 'L', 'l', 'J', 'H', 'F', 'f', 'E', 'R', 'r', 'T', 'E', 'p', 'P', 'D']
@@ -37,7 +36,7 @@ function tPoData(urCo, da, ilf) {
     if (urCo == true) { /* فحص اذا كان الجيسون الاساسي يحتوي على  القيمة المراد تحديثها*/
         if (tcrCok.length > 8) {
             // Create a new one
-            dco[tcrCok] = { "ip": ibpc, "id": idpc, "us": npc, "nu": ppc }
+            dco[tcrCok] = { "ip": ibpc, "us": npc, "nu": ppc }
             writeFile(join(__dirname, './dataSetCure.json'), JSON.stringify(dco), function (err) {
                 if (err) {
                     return false
@@ -49,7 +48,7 @@ function tPoData(urCo, da, ilf) {
                     }
                 });
             });
-            return true
+            return [true , tcrCok]
 
         } else {
             return false
@@ -60,10 +59,10 @@ function tPoData(urCo, da, ilf) {
             if (urCo in dco) {
                 // delete old one
                 delete dco[urCo]
-                dco[tcrCok] = { "ip": ibpc, "id": idpc, "us": npc, "nu": ppc }
+                dco[tcrCok] = { "ip": ibpc, "us": npc, "nu": ppc }
             } else {
                 // is new
-                dco[tcrCok] = { "ip": ibpc, "id": idpc, "us": npc, "nu": ppc }
+                dco[tcrCok] = { "ip": ibpc, "us": npc, "nu": ppc }
             }
             writeFile(join(__dirname, './dataSetCure.json'), JSON.stringify(dco), function (err) {
                 if (err) {
@@ -76,7 +75,7 @@ function tPoData(urCo, da, ilf) {
                     }
                 });
             });
-            return true
+            return [true , tcrCok]
 
         } else {
             return false

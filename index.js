@@ -1,18 +1,22 @@
 const express = require('express');
 const app = express();
 const path = require('path')
+var cookieParser = require('cookie-parser')
+app.use(cookieParser())
 
 const loginBody = require('./public/divLogin.js')
 
 var cklom = require('./cklom/app.js');
 var procfront = require('./wrs_prse/procFront/prp.js')
 var procback = require('./wrs_prse/procsBack/prb.js')
+var httoJs = require('./pu@=inDiv/app.js')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/doLogin', cklom);
 app.use('/procf', procfront);
 app.use('/ppwBackProcsWsV', procback)
+app.use('/home', httoJs)
 
 app.get('/', (req, res) => {
     var verinf = req.query.wxp
