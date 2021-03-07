@@ -5,9 +5,6 @@ const kcehcn = require('./maGet.js')
 const xcehcn = require('./paGet.js')
 const webLog = require('./webLog.js')
 const DivBodyMenu = require('../pu@=inDiv/tBody.js')
-const { readFileSync } = require('fs');
-const { join } = require('path');
-const dhs = readFileSync(join(__dirname, './jsonDataUsersX.json'), 'utf8');
 
 router.get('/', (req, res) => {
     var uNs = req.query.username
@@ -23,14 +20,14 @@ router.get('/', (req, res) => {
                 return res.redirect('/')
             }
 
-            var usn = kcehcn.c_cT(uNs, pAs, dhs, xNum)
+            var usn = kcehcn.c_cT(uNs, pAs, xNum)
             var xusn = usn[0]
             // نشفر الكلمة و من ثم نفك تشفيرها للتأكد من عدم الاختراق
             var xnsu = usn[1]
-            var rVerf = xcehcn.c_pT(xnsu, usn[2], usn[3], cxreal, dhs)
+            var rVerf = xcehcn.c_pT(xnsu, usn[2], usn[3], cxreal)
             if (xusn == true) {
                 if (rVerf[0] == true) {
-                    var webLoff = webLog.tPoData(rVerf[1] , dhs , rVerf[2])
+                    var webLoff = webLog.tPoData(rVerf[1] ,rVerf[3], rVerf[2])
                     console.log(rVerf[1])
                     if (webLoff == true) {
                         //res.sendFile(path.join(__dirname, '../pu@=inDiv/tBody.js'))

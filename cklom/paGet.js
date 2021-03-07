@@ -1,12 +1,16 @@
-function c_pT(n, x, y, realIp, u) {
-    var zaw = JSON.parse(u);
+function c_pT(n, x, y, realIp) {
+    const { readFileSync } = require('fs');
+    const { join } = require('path');
+    const dhs = readFileSync(join(__dirname, './jsonDataUsersX.json'), 'utf8');
+    var zaw = JSON.parse(dhs);
+
     try {
         if (zaw[n].idReq == y) {
             if (realIp == undefined || realIp == null || realIp == "") {
                 return false
             } else {
                 var d = new Date();
-                var dat = d.getFullYear() +'_'+ d.getMonth() +'_'+ d.getDay() +'_'+ d.getHours()
+                var dat = d.getFullYear() + '_' + d.getMonth() + '_' + d.getDay() + '_' + d.getHours()
                 const { writeFile } = require('fs');
                 const { join } = require('path');
                 zaw[n].idReq = x
@@ -19,11 +23,11 @@ function c_pT(n, x, y, realIp, u) {
                     }
                 });
                 var obj = zaw[n]
-                if(obj.hasOwnProperty('coLog') == true){
+                if (obj.hasOwnProperty('coLog') == true) {
                     var cUrl = zaw[n].coLog
-                    return [true , cUrl , {id : x , ip : realIp , nam : n , tp : tpass}]
+                    return [true, cUrl, { id: x, ip: realIp, nam: n, tp: tpass } , zaw]
                 } else {
-                    return [true , true , {id : x , ip : realIp , nam : n , tp : tpass}]
+                    return [true, true, { id: x, ip: realIp, nam: n, tp: tpass } , zaw]
                 }
             }
         } else {

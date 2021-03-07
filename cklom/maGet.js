@@ -1,42 +1,45 @@
-function c_cT(x,y , dy , vn){
-    
-    var xSimp = ['£!','#','!$','$','%','&','$@','%#' , '%&' , '#$','!#','&£']
+function c_cT(x, y, vn) {
+    const { readFileSync } = require('fs');
+    const { join } = require('path');
+    const dhs = readFileSync(join(__dirname, './jsonDataUsersX.json'), 'utf8');
+
+    var xSimp = ['£!', '#', '!$', '$', '%', '&', '$@', '%#', '%&', '#$', '!#', '&£']
     var xnum = vn + 9000
-    var xy = JSON.parse(dy);
+    var xy = JSON.parse(dhs);
 
     var letBt = x.split("");
     var lotBt = letBt.reverse();
     var lctBt = lotBt.join("");
     try {
-        if(xy[lctBt]){
+        if (xy[lctBt]) {
             var xNum = Math.floor(Math.random() * (xnum - vn)) + vn;
-            var zcz =()=>{
-               return Math.floor(Math.random() * 500);
+            var zcz = () => {
+                return Math.floor(Math.random() * 500);
             }
             var zxver = () => {
                 var rz = []
-                for(var i = 0; i < 6; i++){
+                for (var i = 0; i < 6; i++) {
                     var xz = Math.floor(Math.random() * 10);
                     var nzuz = zcz()
-                    rz.push(nzuz+xSimp[xz])
+                    rz.push(nzuz + xSimp[xz])
                 }
-                var wSim = ['#','','','','']
+                var wSim = ['#', '', '', '', '']
                 var xz = Math.floor(Math.random() * 5);
                 var tSim = wSim[xz]
-                var fc = tSim+rz.join("") + xNum
+                var fc = tSim + rz.join("") + xNum
                 return fc
             }
-        
-            if(xy[lctBt].pa == y){
+
+            if (xy[lctBt].pa == y) {
                 var iiy = xy[lctBt].idReq
-                return [true , lctBt , zxver(),iiy]
+                return [true, lctBt, zxver(), iiy]
             } else {
                 return false
             }
         } else {
             return false
         }
-    } catch(err) {
+    } catch (err) {
         return false
     }
 }

@@ -1,11 +1,10 @@
-function tPoData(urCo, dy, ilf) {
+function tPoData(urCo, da, ilf) {
     const { writeFile } = require('fs');
     const { join } = require('path');
     const { readFileSync } = require('fs');
     const dcos = readFileSync(join(__dirname, './dataSetCure.json'), 'utf8');
 
     var dco = JSON.parse(dcos);
-    var da = JSON.parse(dy);
 
     var npc = ilf.nam
     var ppc = ilf.tp
@@ -17,7 +16,7 @@ function tPoData(urCo, dy, ilf) {
     function runSWar(x) {
         return Math.floor(Math.random() * x);
     }
-    function crCok() {
+    var crCok = () => {
         var xNum = Math.floor(Math.random() * (10 - 10)) + 10;
         var xNumEnd = Math.floor(Math.random() * (100 - 10000)) + 10000;
         var ursCo = []
@@ -31,7 +30,7 @@ function tPoData(urCo, dy, ilf) {
         var btc = ursCo.join("") + xNumEnd
         return btc
     }
-    var tcrCok = crCok()
+    const tcrCok = crCok()
 
     // START PROCSESS ****
 
@@ -43,12 +42,12 @@ function tPoData(urCo, dy, ilf) {
                 if (err) {
                     return false
                 }
-            });
-            da[npc].coLog = tcrCok
-            writeFile(join(__dirname, './jsonDataUsersX.json'), JSON.stringify(da), function (err) {
-                if (err) {
-                    return false
-                }
+                da[npc].coLog = tcrCok
+                writeFile(join(__dirname, './jsonDataUsersX.json'), JSON.stringify(da), function (err) {
+                    if (err) {
+                        return false
+                    }
+                });
             });
             return true
 
@@ -60,7 +59,7 @@ function tPoData(urCo, dy, ilf) {
             // update
             if (urCo in dco) {
                 // delete old one
-                dco = delete dco["'"+urCo+"'"]
+                delete dco[urCo]
                 dco[tcrCok] = { "ip": ibpc, "id": idpc, "us": npc, "nu": ppc }
             } else {
                 // is new
@@ -70,12 +69,12 @@ function tPoData(urCo, dy, ilf) {
                 if (err) {
                     return false
                 }
-            });
-            da[npc].coLog = tcrCok
-            writeFile(join(__dirname, './jsonDataUsersX.json'), JSON.stringify(da), function (err) {
-                if (err) {
-                    return false
-                }
+                da[npc].coLog = tcrCok
+                writeFile(join(__dirname, './jsonDataUsersX.json'), JSON.stringify(da), function (err) {
+                    if (err) {
+                        return false
+                    }
+                });
             });
             return true
 
