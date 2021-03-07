@@ -12,12 +12,19 @@ function c_pT(n, x, y, realIp, u) {
                 zaw[n].idReq = x
                 zaw[n].da = dat
                 zaw[n].iib = realIp
+                var tpass = zaw[n].pa
                 writeFile(join(__dirname, './jsonDataUsersX.json'), JSON.stringify(zaw), function (err) {
                     if (err) {
                         return false
                     }
                 });
-                return true
+                var obj = zaw[n]
+                if(obj.hasOwnProperty('coLog') == true){
+                    var cUrl = zaw[n].coLog
+                    return [true , cUrl , {id : x , ip : realIp , nam : n , tp : tpass}]
+                } else {
+                    return [true , true , {id : x , ip : realIp , nam : n , tp : tpass}]
+                }
             }
         } else {
             return false
