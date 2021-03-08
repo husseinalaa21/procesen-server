@@ -14,16 +14,12 @@ var httoJs = require('./pu@=inDiv/app.js')
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/doLogin', cklom);
-app.use('/procf', procfront);
-app.use('/ppwBackProcsWsV', procback)
+app.use('/pc', procfront);
+app.use('/bc', procback)
 app.use('/home', httoJs)
 
-app.get('/sendMeDataR',(req,res)=>{
-    console.log(" ---------------------- ")
-    console.log(req.headers.origin)
-    console.log(req.headers.referer)
-    console.log(" *********************** ")
-})
+//req.headers.origin
+//req.headers.referer
 
 app.get('/', (req, res) => {
     var verinf = req.query.wxp
