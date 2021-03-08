@@ -1,36 +1,20 @@
 const express = require('express');
 const router = express.Router();
-const path = require('path')
-const kcehcn = require('./maGet.js')
-const xcehcn = require('./paGet.js')
-const webLog = require('./webLog.js')
+const jsUop = require('./jsUfp.js')
 
 router.get('/', (req, res) => {
     var uNs = req.query.username
     var pAs = req.query.pass
     if (uNs.length < 20 && uNs.length > 0) {
         if (pAs.length < 20 && pAs.length > 0) {
-
-            var xNum = Math.floor(Math.random() * 20);
-            try {
-                //var cxreal = req.headers["x-real-ip"]
-                var cxreal = '129.3121.001'
-            } catch (err) {
-                return res.redirect('/')
-            }
-
-            var usn = kcehcn.c_cT(uNs, pAs, xNum)
-            var xusn = usn[0]
-            // نشفر الكلمة و من ثم نفك تشفيرها للتأكد من عدم الاختراق
-            var xnsu = usn[1]
-            var rVerf = xcehcn.c_pT(xnsu, usn[2], usn[3], cxreal)
-            if (xusn == true) {
+            //var cxreal = req.headers["x-real-ip"]
+            var cxreal = '129.3121.001'
+            var usn = jsUop.uofpm("reqUspr", { nu: uNs, ps: pAs })
+            if (usn[0] == true) {
+                var rVerf = jsUop.uofpm("iopUs", { nus: usn[1], tNeId: usn[2], tLodId: usn[3], realIp: cxreal })
                 if (rVerf[0] == true) {
-                    var webLoff = webLog.tPoData(rVerf[1], rVerf[3], rVerf[2])
+                    var webLoff = jsUop.tPoData("_pos_ty12--#husUsUnIoJ", rVerf[1])
                     if (webLoff[0] == true) {
-                        //res.sendFile(path.join(__dirname, '../pu@=inDiv/tBody.js'))
-                        //res.send(DivBodyMenu.tBody(usn[2]))
-                        // return him to main page
                         res.cookie('inb', webLoff[1]);
                         res.redirect('/home')
                     } else {

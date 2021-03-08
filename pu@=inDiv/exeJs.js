@@ -1,30 +1,25 @@
 function execuateJs(koc) {
-    const { join } = require('path');
-    const { readFileSync } = require('fs');
-    const zcip = readFileSync(join(__dirname, '../cklom/jsonDataUsersX.json'), 'utf8');
-    var zcp = JSON.parse(zcip);
-    const zxip = readFileSync(join(__dirname, '../cklom/dataSetCure.json'), 'utf8');
-    var zxp = JSON.parse(zxip);
-
-    if (koc in zxp) {
-        var __idc = zxp[koc].us
-        var __ipc = zxp[koc].nu
-        var __cv = zxp[koc].ip
-        if (__idc in zcp) {
-            if (zcp[__idc].pa === __ipc) {
-                if (zcp[__idc].iib === __cv) {
-                    return [true, zcp[__idc].idReq, zcp[__idc].nuy]
-                } else {
-                    return false
-                }
-            } else {
+    var jBasicMain = require('../cklom/jsUfp.js')
+    var jCok = require('../cklom/dataSetCure.js')
+    var zcok = jCok.coko("youVc_eCoksWSweb1000", koc)
+    if (zcok === false) {
+        return false
+    } else {
+        if (zcok.case === true) {
+            var obCok = zcok.data
+            var su = obCok.us
+            var ad = obCok.da
+            var di = obCok.id
+            var pi = obCok.ip
+            var finCase = jBasicMain.cecData("_poi122#XCOK7000", {us: su, da: ad, id: di, ip : pi , cv : koc})
+            if(finCase === false){
                 return false
+            } else {
+                return {case : finCase[0] ,num : finCase[1],inUser : finCase[2], info : {us: su, da: ad, id: di, ip : pi}}
             }
         } else {
             return false
         }
-    } else {
-        return false
     }
 }
 

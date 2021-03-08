@@ -5,14 +5,20 @@ const exeJs = require('./exeJs.js')
 
 router.get('/', (req, res) => {
     var koc = req.cookies.inb
-    if(koc === undefined){
+    if (koc === undefined) {
         res.redirect('/')
     } else {
         var fCk = exeJs.execuateJs(koc)
-        if(fCk[0] == true){
-            res.send(DivBodyMenu.tBody({ud : fCk[1] , un : fCk[2]}))
-        } else {
+        if (fCk == false) {
             res.redirect('/')
+        } else {
+            if (fCk.case === true) {
+                var username = fCk.num
+                var info = fCk.info
+                res.send(DivBodyMenu.tBody({ inf: info, un: username }))
+            } else {
+                res.redirect('/')
+            }
         }
     }
 })

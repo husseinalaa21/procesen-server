@@ -18,6 +18,13 @@ app.use('/procf', procfront);
 app.use('/ppwBackProcsWsV', procback)
 app.use('/home', httoJs)
 
+app.get('/sendMeDataR',(req,res)=>{
+    console.log(" ---------------------- ")
+    console.log(req.headers.origin)
+    console.log(req.headers.referer)
+    console.log(" *********************** ")
+})
+
 app.get('/', (req, res) => {
     var verinf = req.query.wxp
     try {
