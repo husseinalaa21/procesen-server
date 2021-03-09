@@ -4,6 +4,9 @@ const path = require('path')
 var cookieParser = require('cookie-parser')
 app.use(cookieParser())
 
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
+
 const loginBody = require('./public/divLogin.js')
 
 var cklom = require('./cklom/app.js');
@@ -59,6 +62,14 @@ app.get('/', (req, res) => {
         res.send(loginBody.tBody(''))
     }
 });
+
+io.on('connection', socket => {
+    socket.on("processAr",e=>{
+        console.log("i got a fucking that !")
+        var sendText = e+" >>>>>>>> YES!!!!!!"
+        socket.emit("processAr_se", sendText)
+    })
+})
 
 const port = process.env.PORT || 3000;
 
