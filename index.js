@@ -64,12 +64,7 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', socket => {
-    console.log(`new user `)
-    socket.on("processAr",e=>{
-        console.log("i got a fucking that !")
-        var sendText = e+" >>>>>>>> YES!!!!!!"
-        socket.emit("processAr_se", sendText)
-    })
+    console.log(socket.handshake.auth);
 })
 
 const port = process.env.PORT || 3000;
