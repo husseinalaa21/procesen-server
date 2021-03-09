@@ -24,11 +24,11 @@ router.get('/procsentEnQues', (req, res) => {
 // Process Section
 router.get('/procsentAr', (req, res) => {
     console.log(req.headers.origin)
+    var cObj = req.query.obj
+    var cs = req.query.cs
+    var blo = req.query.blo
     try {
         if(req.headers.origin === "https://ar.procsent.com" || req.headers.origin === "https://server.procsent.com"){
-            var cObj = req.query.obj
-            var cs = req.query.cs
-            var blo = req.query.blo
             if(blo === true){
                 //var nwda = proc.psc(cObj , cs)
                 res.send(cs)
@@ -39,7 +39,7 @@ router.get('/procsentAr', (req, res) => {
             res.send("false")
         }
     } catch(err) {
-        res.send("false")
+        res.send(cs)
     }
 })
 
