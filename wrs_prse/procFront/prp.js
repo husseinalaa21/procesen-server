@@ -23,13 +23,14 @@ router.get('/procsentEnQues', (req, res) => {
 
 // Process Section
 router.get('/procsentAr', (req, res) => {
+    console.log(req.headers.referer)
     if(req.headers.referer === "https://ar.procsent.com/" || req.headers.referer === "https://server.procsent.com/"){
         var cObj = req.query.obj
         var cs = req.query.cs
         var blo = req.query.blo
         if(blo === true){
-            var nwda = proc.psc(cObj , cs)
-            res.send(nwda)
+            //var nwda = proc.psc(cObj , cs)
+            res.send(cs)
         } else {
             res.send(cs)
         }
