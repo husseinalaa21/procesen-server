@@ -24,6 +24,7 @@ router.get('/procsentEnQues', (req, res) => {
 // Process Section
 router.get('/procsentAr', (req, res) => {
     console.log(req.headers.referer)
+    console.log(" we are here ")
     if(req.headers.referer === "https://ar.procsent.com/" || req.headers.referer === "https://server.procsent.com/"){
         var cObj = req.query.obj
         var cs = req.query.cs
