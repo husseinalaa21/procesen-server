@@ -64,8 +64,6 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', socket => {
-    const id = socket.handshake.query
-    socket.join(id)
     console.log(`new user `)
     socket.on("processAr",e=>{
         console.log("i got a fucking that !")
