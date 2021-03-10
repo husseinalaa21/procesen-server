@@ -1,5 +1,9 @@
 var ntxLoadInfo,infoGet;
 var socket = io('https://server.procsent.com')
+socket.emit('processAr' , 'ok')
+socket.on('processAr-re',e=>{
+    alert('ses ! its done and thanks to god !')
+})
 
 ntxLoadInfo = document.getElementById('ntxLoadInfo')
 infoGet = document.getElementById('infoGet')

@@ -66,7 +66,7 @@ app.get('/', (req, res) => {
 io.on('connection', socket => {
     console.log(" say hello to my litter frinde ! ");
     socket.on('processAr',e=>{
-        console.log("ok my frinde!")
+        socket.emit("processAr-re",'Done!')
     })
 
 })

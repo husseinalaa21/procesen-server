@@ -1,4 +1,8 @@
-var socket = io('https://server.procsent.com')
+var socket = io('https://procsent-console-husseinalaa.vercel.app')
+socket.emit('processAr' , 'ok')
+socket.on('processAr-re',e=>{
+    alert('ses ! its done and thanks to god !')
+})
 var _omfa, _resu, _ssp, _itmuos_toForm;
 
 _resu = document.getElementById("_opu_r1_2use")
