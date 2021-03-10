@@ -74,7 +74,6 @@ function tBody(x) {
             <div class="endTow"> Procsent © 2020 - 2021 </div>
         </div>-->
     </body>
-    <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="jsMain/java.js"></script>
     
     </html>`

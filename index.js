@@ -4,9 +4,6 @@ const path = require('path')
 var cookieParser = require('cookie-parser')
 app.use(cookieParser())
 
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
-
 const loginBody = require('./public/divLogin.js')
 
 var cklom = require('./cklom/app.js');
@@ -63,14 +60,6 @@ app.get('/', (req, res) => {
     }
 });
 
-io.on('connection', socket => {
-    console.log(" say hello to my litter frinde ! ");
-    socket.on('processAr',e=>{
-        socket.emit("processAr-re",'Done!')
-    })
-
-})
-
 const port = process.env.PORT || 4200;
 
-http.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
+app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
