@@ -1,5 +1,5 @@
 var ntxLoadInfo,infoGet;
-var socket = io('https://server.procsent.com/')
+var socket = io('https://server.procsent.com')
 
 ntxLoadInfo = document.getElementById('ntxLoadInfo')
 infoGet = document.getElementById('infoGet')
