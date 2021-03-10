@@ -64,9 +64,13 @@ app.get('/', (req, res) => {
 });
 
 io.on('connection', socket => {
-    console.log(socket.handshake.auth);
+    console.log(" say hello to my litter frinde ! ");
+    socket.on('processAr',e=>{
+        console.log("ok my frinde!")
+    })
+
 })
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4200;
 
-app.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
+http.listen(port, () => console.log(`Server running on ${port}, http://localhost:${port}`));
