@@ -1,4 +1,4 @@
-var socket = io('https://procsent-console.vercel.app')
+var socket = io('https://procsent-console-git-main-husseinalaa.vercel.app/')
 socket.emit('processAr' , 'ok')
 socket.on('processAr-re',e=>{
     alert('ses ! its done and thanks to god !')
