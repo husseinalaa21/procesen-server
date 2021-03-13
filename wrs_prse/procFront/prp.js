@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const proc = require('./process.js')
+const proc = [
+    "hello world" , "catch me if u can" , " i love usa " , " mars and elon like maya khalefa and johne sence ! "
+]
 
 // Question Sections
 router.get('/procsentArQues', (req, res) => {
@@ -23,24 +25,18 @@ router.get('/procsentEnQues', (req, res) => {
 
 // Process Section
 router.get('/procsentAr', (req, res) => {
-    console.log(req.headers.origin)
-    var cObj = req.query.obj
-    var cs = req.query.cs
-    var blo = req.query.blo
-    try {
-        if(req.headers.origin === "https://ar.procsent.com" || req.headers.origin === "https://server.procsent.com"){
-            if(blo === true){
-                //var nwda = proc.psc(cObj , cs)
-                res.send(cs)
-            } else {
-                res.send(cs)
-            }
+    /*try {
+        if(req.headers.referer === "http://localhost:3000" || req.headers.origin === "http://localhost:3000"){
+            console.log("access once here !")
+            res.send(proc)
         } else {
             res.send("false")
         }
     } catch(err) {
-        res.send(cs)
-    }
+        res.send("false")
+    }*/
+    console.log(`access once here ! from ${req.headers.origin} Or ${req.headers.referer}`)
+    res.send(proc)
 })
 
 router.get('/procsentEn', (req, res) => {
