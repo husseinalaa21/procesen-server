@@ -4,18 +4,10 @@ const path = require('path')
 var cookieParser = require('cookie-parser')
 app.use(cookieParser())
 var cors = require('cors');
-app.use((req, res, next) => {
-    const allowedOrigins =  ['https://ar.procesen.com','https://server.procesen.com','https://procesen.com','https://en.procesen.com','http://localhost:3000'];
-    const origin = req.headers.origin;
-    if (allowedOrigins.includes(origin)) {
-         res.setHeader('Access-Control-Allow-Origin', origin);
-    }
-    //res.header('Access-Control-Allow-Origin', 'http://127.0.0.1:8020');
-    res.header('Access-Control-Allow-Methods', 'GET, OPTIONS');
-    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    res.header('Access-Control-Allow-Credentials', true);
-    return next();
-  });
+app.use(cors({
+    origin: ['https://ar.procesen.com', 'https://server.procesen.com', 'https://procesen.com', 'https://en.procesen.com', 'http://localhost:3000']
+}));
+
 const loginBody = require('./public/divLogin.js')
 
 var cklom = require('./cklom/app.js');
@@ -36,7 +28,7 @@ app.use('/home', httoJs)
 app.get('/', (req, res) => {
     var verinf = req.query.wxp
     try {
-        if(verinf === 'wtoacclog') {
+        if (verinf === 'wtoacclog') {
             return res.send(loginBody.tBody(
                 `<div id="alertWarnning" >
                 <div class="wrongAcess">
@@ -45,7 +37,7 @@ app.get('/', (req, res) => {
                 </div>
             </div>`
             ))
-        }else if(verinf === 'wtoacclg') {
+        } else if (verinf === 'wtoacclg') {
             return res.send(loginBody.tBody(
                 `
             <div id="alertWarnning" >
@@ -55,7 +47,7 @@ app.get('/', (req, res) => {
                 </div>
             </div>`
             ))
-        }else if(verinf.length > 0){
+        } else if (verinf.length > 0) {
             return res.send(loginBody.tBody(
                 `
             <div id="alertWarnning" >
