@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser')
 app.use(cookieParser())
 var cors = require('cors');
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'https://ar.procesen.com'
   }));
 
 const loginBody = require('./public/divLogin.js')
