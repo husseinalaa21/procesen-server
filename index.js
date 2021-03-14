@@ -3,6 +3,10 @@ const app = express();
 const path = require('path')
 var cookieParser = require('cookie-parser')
 app.use(cookieParser())
+var cors = require('cors');
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
 
 const loginBody = require('./public/divLogin.js')
 
