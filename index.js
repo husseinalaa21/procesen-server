@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser')
 app.use(cookieParser())
 var cors = require('cors');
 app.use(cors({
-    origin: ['https://procesen.com', 'https://server.procesen.com','https://ar.procesen.com' , 'https://en.procesen.com', 'http://localhost:3000']
+    origin: ['https://procesen.com', 'https://server.procesen.com','https://ar.procesen.com' , 'https://en.procesen.com', 'http://localhost:3000', 'http://127.0.0.1:5500/callUs/callus-ar/index.html']
 }));
 
 const loginBody = require('./public/divLogin.js')
@@ -14,6 +14,7 @@ var cklom = require('./cklom/app.js');
 var procfront = require('./wrs_prse/procFront/prp.js')
 var procback = require('./wrs_prse/procsBack/prb.js')
 var httoJs = require('./pu@=inDiv/app.js')
+var mesFu = require('./feedMessage/app.js')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -21,6 +22,7 @@ app.use('/doLogin', cklom);
 app.use('/pc', procfront);
 app.use('/bc', procback)
 app.use('/home', httoJs)
+app.use('/FeedMessage', mesFu)
 
 //req.headers.origin
 //req.headers.referer
