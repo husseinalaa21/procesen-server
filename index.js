@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser')
 app.use(cookieParser())
 var cors = require('cors');
 app.use(cors({
-    origin: ['https://procesen.com', 'https://server.procesen.com','https://ar.procesen.com' , 'https://en.procesen.com', 'http://localhost:3000', 'http://127.0.0.1:5500/callUs/callus-ar/index.html']
+    origin: ['https://procesen.com', 'https://server.procesen.com','https://ar.procesen.com' , 'https://en.procesen.com', 'http://localhost:3000', 'https://callus.procesen.com/callus-ar/index.html','https://callus.procesen.com/callus-en/index.html']
 }));
 
 const loginBody = require('./public/divLogin.js')
