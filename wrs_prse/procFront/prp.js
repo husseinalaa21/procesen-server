@@ -24,11 +24,11 @@ const buffuJsEn = {
         {"exdz":'[a-zA-Z]', "nam" : ' Letters English '},
         {"exdz":'[$-/:-?{-~!"^_`"#@]', "nam" : ' Breaks and symbols ' },
         {"exdz":'\n', "nam" : ' Lins ' },
-        {"exdz":false,"nam" : ' Arabic word processing '},
-        {"exdz":false,"nam" : ' English word processing '},
-        {"exdz":false,"nam" : ' Remove quotes '},
-        {"exdz":false,"nam" : ' Converting Arabic letters into English letters '},
-        {"exdz":false,"nam" : ' Converting English letters into Arabic letters '}
+        {"exdz":false,"nam" : ' Arabic word processing ',"ex": false, "eo" : [['مرحبا', 'هاي'], ["العالم","الارض"]]},
+        {"exdz":false,"nam" : ' English word processing ',"ex":false , "eo":[['hello', 'hi'], ["word","earth"]]},
+        {"exdz":false,"nam" : ' Remove quotes ', "ex" : true,"eo":'[1]'},
+        {"exdz":false,"nam" : ' Converting Arabic letters into English letters ',"ex":false, "eo" : [['1','2']]},
+        {"exdz":false,"nam" : ' Converting English letters into Arabic letters ',"ex":false, "eo" : [['1','2']]}
     ]
 }
 
