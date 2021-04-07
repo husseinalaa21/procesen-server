@@ -16,11 +16,11 @@ const buffuJs = {
 // if ex is true it's mean's delete element as area
 const buffuJsEn = {
     "_dvBn" : [
-        {"exdz" : '0|1|2|3|4|5|6|7|8|9' , "nam" : ' Numbers '},
+        {"exdz" : '[0-9]' , "nam" : ' Numbers '},
         {"exdz":' ', "nam" : ' Spaces ' },
-        {"exdz":'ض|ص|ث|ق|ف|غ', "nam" : 'Letters Arabic'},
-        {"exdz":'a|s|d|d|f|v|z', "nam" : ' Letters English '},
-        {"exdz":'[$-/:-?{-~!"^_`"#@]', "nam" : ' Breaks and symbols ' },,
+        {"exdz":'[\u0600-\u06FF]', "nam" : 'Letters Arabic'},
+        {"exdz":'[a-zA-Z]', "nam" : ' Letters English '},
+        {"exdz":'[$-/:-?{-~!"^_`"#@]', "nam" : ' Breaks and symbols ' },
         {"exdz":'procesen', "nam" : 'Else' },
         {"exdz":'\n', "nam" : ' Lins ' },
         {"exdz":false,"nam" : ' Word processing ( English ) ',"ex":false , "eo":[['Go', 'Run'], ["Trump","Biden"]]},
