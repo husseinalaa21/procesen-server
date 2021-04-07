@@ -9,10 +9,8 @@ const buffuJs = {
         {"exdz":'[$-/:-?{-~!"^_`"#@]', "nam" : ' رموز و فواصل ' },
         {"exdz":'\n', "nam" : ' سطور ' },
         {"exdz":false,"nam" : ' أزالة الاقتباسات ', "ex" : true,"eo":'[\[+(?=0|1|2|3|4|5|6|7|8|9|٠|٩|٨|٧|٦|٥|٤|٣|٢|١)\]+]'},
-        {"exdz":false,"nam" : ' معالجة الكلمات العربية ',"ex": false, "eo" : [['مرحبا', 'هاي'], ["العالم","الارض"]]},
-        {"exdz":false,"nam" : ' معالجة الكلمات الانجليزية ',"ex":false , "eo":[['hello', 'hi'], ["word","earth"]]},
-        {"exdz":false,"nam" : ' تحويل الارقام العربية الى ارقام أنجليزية ',"ex":false, "eo" : [['1','2']]},
-        {"exdz":false,"nam" : ' تحويل الارقام الانجليزية الى الارقام عربية ',"ex":false, "eo" : [['1','2']]}
+        {"exdz":false,"nam" : ' ( العربية ) معالجة الكلمات ',"ex": false, "eo" : [['مرحبا', 'هاي'], ["كيف حالك","كيف هو حالك"]]},
+        {"exdz":false,"nam" : ' ( العربية ) معالجة الجمل ',"ex":false , "eo":[['لا تحتوي', 'لا تمتلك'], ["لا يستطيع","لا يقدر"]]}
     ]
 }
 // if ex is true it's mean's delete element as area
@@ -25,11 +23,8 @@ const buffuJsEn = {
         {"exdz":'[$-/:-?{-~!"^_`"#@]', "nam" : ' Breaks and symbols ' },,
         {"exdz":'', "nam" : 'Else' },
         {"exdz":'\n', "nam" : ' Lins ' },
-        {"exdz":false,"nam" : ' Remove quotes ', "ex" : true,"eo":'[\[+(?=0|1|2|3|4|5|6|7|8|9|٠|٩|٨|٧|٦|٥|٤|٣|٢|١)\]+]'},
-        {"exdz":false,"nam" : ' Arabic word processing ',"ex": false, "eo" : [['مرحبا', 'هاي'], ["العالم","الارض"]]},
-        {"exdz":false,"nam" : ' English word processing ',"ex":false , "eo":[['hello', 'hi'], ["word","earth"]]},
-        {"exdz":false,"nam" : ' Converting Arabic letters into English letters ',"ex":false, "eo" : [['1','2']]},
-        {"exdz":false,"nam" : ' Converting English letters into Arabic letters ',"ex":false, "eo" : [['1','2']]}
+        {"exdz":false,"nam" : ' Word processing ( English ) ',"ex":false , "eo":[['Go', 'Run'], ["Trump","Biden"]]},
+        {"exdz":false,"nam" : ' Sentences processing ( English ) ',"ex":false, "eo" : [['hello ,', 'hi ,'], ["how old are you","What is your age"]]}
     ]
 }
 
