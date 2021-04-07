@@ -20,7 +20,7 @@ const buffuJsEn = {
         {"exdz":' ', "nam" : ' Spaces ' },
         {"exdz":'[\u0600-\u06FF]', "nam" : 'Letters Arabic'},
         {"exdz":'[a-zA-Z]', "nam" : ' Letters English '},
-        {"exdz":`[^\w|^\u0600-\u06FF]`, "nam" : ' Breaks and symbols ' },
+        {"exdz":`[^a-zA-Z|^\u0600-\u06FF|^0-9]`, "nam" : ' Breaks and symbols ' },
         {"exdz":'\n', "nam" : ' Lins ' },
         {"exdz":false,"nam" : ' Remove quotes ', "ex" : true,"eo":'[\[+(?=0|1|2|3|4|5|6|7|8|9|٠|٩|٨|٧|٦|٥|٤|٣|٢|١)\]+]'},
         {"exdz":false,"nam" : ' Word processing ( English ) ',"ex":false , "eo":[['Go', 'Run'], ["Trump","Biden"]]},
