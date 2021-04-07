@@ -21,7 +21,7 @@ const buffuJsEn = {
         {"exdz":'ض|ص|ث|ق|ف|غ', "nam" : 'Letters Arabic'},
         {"exdz":'a|s|d|d|f|v|z', "nam" : ' Letters English '},
         {"exdz":'[$-/:-?{-~!"^_`"#@]', "nam" : ' Breaks and symbols ' },,
-        {"exdz":'\/', "nam" : 'Else' },
+        {"exdz":'procesen', "nam" : 'Else' },
         {"exdz":'\n', "nam" : ' Lins ' },
         {"exdz":false,"nam" : ' Word processing ( English ) ',"ex":false , "eo":[['Go', 'Run'], ["Trump","Biden"]]},
         {"exdz":false,"nam" : ' Sentences processing ( English ) ',"ex":false, "eo" : [['hello ,', 'hi ,'], ["how old are you","What is your age"]]}
