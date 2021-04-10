@@ -46,17 +46,14 @@ function sen(tee) {
         tezx = newSwp.join('');
         ttezx = newSwp.join('');
     }
-    //var tusDus = [];
     // START PROCESSING (B*2)
     for (var s = 0; s < arB.length; s++) {
         const rn = s
         if (basB[rn].ex === true && arB[rn] === true) {
             let reLe = new RegExp(basB[rn].eo, 'g')
             tezx = tezx.replace(reLe, "")
-            // COLOR TO FONT 
-            ttezx = ttezx.replace(reLe, '')
-            //tusDus.push({ n: 'ID!291'+s+'!S', v: '<span class="deWor">' + basB[rn].eo + '</span>' })
-            //colorix ? ttezx = ttezx.replace(reLe, 'ID!291'+s+'!S') : ttezx = ttezx.replace(reLe, '')
+            ttezx = ttezx.replace(reLe, "")
+            // class="deWor"
         } else if (basB[rn].ex === false && arB[rn] === true) {
             for (var wd = 0; wd < basB[rn].eo.length; wd++) {
                 const wr = wd
@@ -64,25 +61,21 @@ function sen(tee) {
                 let relle = new RegExp(wx[0], 'g')
                 if ((relle.test(wx[0])) === true) {
                     tezx = tezx.replace(relle, wx[1])
-                    // COLOR TO FONT 
                     ttezx = ttezx.replace(relle, wx[1])
-                    //tusDus.push({ n: 'ID!291'+s+'!S', v: '<span class="olWor">' + wx[0] + '</span> <span class="oneWor">' + wx[1] + '</span>' })
-                    //colorix ? ttezx = ttezx.replace(relle, 'ID!291'+s+'!S') : ttezx = ttezx.replace(relle, wx[1])
+                    // class="olWor" 
+                    // class="oneWor"
                 }
             }
         }
     }
-    // PREPERED DATA TO SEND
+    
     ttezx = ttezx.replace(/\n/g, "<br/>").replace(/ /g, "&nbsp;")
-    // COLOR TO FONT 
-    /*
-    if (colorix === true && tusDus.length > 0) {
-        for(var itm = 0; itm < tusDus.length; itm ++){
-            const nt = itm
-            let relle = new RegExp(tusDus[nt].n,'g')
-            ttezx = ttezx.replace(relle, tusDus[nt].v)
-        }
-    }*/
+    /*let cw_wo = new RegExp('-11EN--TO29-','g')
+    let to29 = new RegExp('-TO29-','g')
+    let en11 = new RegExp('-11EN-','g')
+    let text_wo = ttezx.replace(cw_wo,"")
+    ttezx = text_wo.replace(to29,'<span class="deWor">').replace(en11,'</span>')*/
+    // PREPERED DATA TO SEND
     return [tezx, ttezx]
 }
 module.exports = {
