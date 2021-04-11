@@ -40,19 +40,20 @@ router.get('/procsentAr/sen/', (req, res) => {
         trs = tDe[3],
         arBNew = tDe[4];
 
-    const procesen = new Promise((res, rej) => {
+    var procesen = new Promise((res, rej) => {
+        var rr = "<div class='errTextArea'> A problem occurred, there is an error in the input process, either with the input elements, or you entered an invalid value, or you tried to enter invalid functions to delete or modify, a notification has been sent to the programmers and they will work on solving the problem soon . </div> <div class='listErrInfo'> <p class='titleErr'> Please follow one of the following options : </p> <ul class='ulErr'> <li>Please check the text settings entered by you . </li> <li> To Reload page <a href='/'>click here</a> </li></ul> </div>"
         var swn = pro.sen({ xs, arA, arB, trs, arBNew , sysDatA : coffeA,sysDatB : coffeB})
         if (swn !== false) {
             res({ tex: swn[0], texs: swn[1] })
-            rej({ tex: "err", texs: "err" })
+            rej({ tex: rr, texs: rr})
         } else {
-            rej({ tex: "err", texs: "err" })
+            rej({ tex: rr})
         }
     })
     procesen.then(e => {
-        res.send([e.tex, e.texs])
+        res.send([e.tex])
     }).catch(e => {
-        res.send([e.tex, e.texs])
+        res.send([e.tex])
     })
 })
 
@@ -71,19 +72,20 @@ router.get('/procsentEn/sen/', (req, res) => {
         trs = tDe[3],
         arBNew = tDe[4];
 
-    const procesen = new Promise((res, rej) => {
+    var procesen = new Promise((res, rej) => {
+        var rr = "<div class='errTextArea'> A problem occurred, there is an error in the input process, either with the input elements, or you entered an invalid value, or you tried to enter invalid functions to delete or modify, a notification has been sent to the programmers and they will work on solving the problem soon . </div> <div class='listErrInfo'> <p class='titleErr'> Please follow one of the following options : </p> <ul class='ulErr'> <li>Please check the text settings entered by you . </li> <li> To Reload page <a href='/'>click here</a> </li></ul> </div>"
         var swn = pro.sen({ xs, arA, arB, trs, arBNew , sysDatA : coffeA,sysDatB : coffeB})
         if (swn !== false) {
             res({ tex: swn[0], texs: swn[1] })
-            rej({ tex: "obs", texs: "obs" })
+            rej({ tex: rr, texs: rr})
         } else {
-            rej({ tex: "err", texs: "err" })
+            rej({ tex: rr})
         }
     })
     procesen.then(e => {
-        res.send([e.tex, e.texs])
+        res.send([e.tex])
     }).catch(e => {
-        res.send([e.tex, e.texs])
+        res.send([e.tex])
     })
 })
 // END Two
