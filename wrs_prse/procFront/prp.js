@@ -48,10 +48,10 @@ router.get('/procsentAr/sen/', (req, res) => {
             if (swn !== false) {
                 res({ tex: swn[0], texs: swn[1] })
                 // Proplem from weting processein function
-                rej({ tex: rr, texs: rr })
+                rej({ tex: false })
             } else {
                 // Proplem from processing function
-                rej({ tex: rr })
+                rej({ tex: false })
             }
         })
         procesen.then(e => {
@@ -61,7 +61,7 @@ router.get('/procsentAr/sen/', (req, res) => {
         })
     } catch (err) {
         // Proplem with array from user
-        res.send([rr])
+        res.send([false])
     }
 })
 
@@ -73,8 +73,6 @@ router.get('/procsentEn', (req, res) => {
 router.get('/procsentEn/sen/', (req, res) => {
     var coffeA = psc.buffuJs(false, true)
     var coffeB = psc.buffuJs(false, false)
-    var rr = "<div class='errTextArea'> A problem occurred, there is an error in the input process, either with the input elements, or you entered an invalid value, or you tried to enter invalid functions to delete or modify, a notification has been sent to the programmers and they will work on solving the problem soon . </div> <div class='listErrInfo'> <p class='titleErr'> Please follow one of the following options : </p> <ul class='ulErr'> <li>Please check the text settings entered by you . </li> <li> To Reload page <a href='/'>click here</a> </li></ul> </div>"
-
     try {
         var tDe = JSON.parse(req.query.pr)
         var xs = tDe[0],
@@ -88,10 +86,10 @@ router.get('/procsentEn/sen/', (req, res) => {
             if (swn !== false) {
                 res({ tex: swn[0], texs: swn[1] })
                 // Proplem from weting processein function
-                rej({ tex: rr, texs: rr })
+                rej({ tex: false})
             } else {
                 // Proplem from processing function
-                rej({ tex: rr })
+                rej({ tex: false })
             }
         })
         procesen.then(e => {
@@ -101,7 +99,7 @@ router.get('/procsentEn/sen/', (req, res) => {
         })
     } catch {
         // Proplem with array from user
-        res.send([rr])
+        res.send([false])
     }
 })
 // END Two
