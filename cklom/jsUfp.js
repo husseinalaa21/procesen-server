@@ -1,6 +1,7 @@
 var uspr = { "aala0002119#niessuh": { "nuy": "Hussein Alaa", "pa": "2000911Hussein", "idReq": "huuusss12121fsdf#@$2312sdas", "da": "", "iib": "", "coLog": "" } }
 
 function uofpm(x, y) {
+    console.log(uspr)
     try {
         if (x === "reqUspr") {
             var nu = y.nu

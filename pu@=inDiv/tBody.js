@@ -12,14 +12,14 @@ function tBody(x) {
         <link rel="stylesheet" href="/design=pu/tols.css">
         <link rel="stylesheet" href="/design=pu/pro.css">
         <link rel="stylesheet" href="/design=pu/addWs.css">
-        <title> Procsent | `+x.un+`</title>
+        <title> Procesen | `+x.un+`</title>
     </head>
     
     <body>
         <div class="header-main">
             <div class="header shMain">
                 <div class="logo_procsent">
-                    <div class="logo_procsent_text"> Procsent </div>
+                    <div class="logo_procsent_text"> Procesen </div>
                     <div class="logo_procsent_img"> <img src="/styleMain/logo5.png" class="icoPage" height="50px"
                             alt="icon" />
                     </div>

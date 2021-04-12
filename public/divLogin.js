@@ -14,13 +14,13 @@ function tBody(x) {
         <link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
         <!-- FontAwesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <title>Login Procsent</title>
+        <title>Login Procesen</title>
     </head>
     
     <body>
         <div class="backBody shMain">
             <div class="procs_logo">
-                <div class="procs_logoText">Procsent</div> <img src="styleMain/icon.png" height="45px" />
+                <div class="procs_logoText">Procesen</div> <img src="styleMain/icon.png" height="45px" />
             </div>
         </div>
         <div class="backBodyFix"></div>
