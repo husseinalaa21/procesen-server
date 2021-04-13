@@ -37,7 +37,7 @@ router.get('/procsentAr/sen/', (req, res) => {
 
     try {
         var tDe = JSON.parse(req.query.pr)
-        var xs = tDe[0],
+        var xs = tDe[0].replace(/0S1/g,'£').replace(/0D8/g,'$').replace(/0W1/g,'&').replace(/0X6/g,'#').replace(/0G2/g,'%'),
             arA = tDe[1],
             arB = tDe[2],
             trs = tDe[3],
@@ -46,7 +46,7 @@ router.get('/procsentAr/sen/', (req, res) => {
         var procesen = new Promise((res, rej) => {
             var swn = pro.sen({ xs, arA, arB, trs, arBNew, sysDatA: coffeA, sysDatB: coffeB })
             if (swn !== false) {
-                res({ tex: swn[0], texs: swn[1] })
+                res({ tex: swn[0].replace(/\u00A3/g,'0S1').replace(/\$/g,'0D8').replace(/\&/g,'0W1').replace(/\#/g,'0X6').replace(/\%/g,'0G2'), texs: swn[1] })
                 // Proplem from weting processein function
                 rej({ tex: false })
             } else {
@@ -75,7 +75,7 @@ router.get('/procsentEn/sen/', (req, res) => {
     var coffeB = psc.buffuJs(false, false)
     try {
         var tDe = JSON.parse(req.query.pr)
-        var xs = tDe[0],
+        var xs = tDe[0].replace(/0S1/g,'£').replace(/0D8/g,'$').replace(/0W1/g,'&').replace(/0X6/g,'#').replace(/0G2/g,'%'),
             arA = tDe[1],
             arB = tDe[2],
             trs = tDe[3],
@@ -84,7 +84,7 @@ router.get('/procsentEn/sen/', (req, res) => {
         var procesen = new Promise((res, rej) => {
             var swn = pro.sen({ xs, arA, arB, trs, arBNew, sysDatA: coffeA, sysDatB: coffeB })
             if (swn !== false) {
-                res({ tex: swn[0], texs: swn[1] })
+                res({ tex: swn[0].replace(/\u00A3/g,'0S1').replace(/\$/g,'0D8').replace(/\&/g,'0W1').replace(/\#/g,'0X6').replace(/\%/g,'0G2'), texs: swn[1] })
                 // Proplem from weting processein function
                 rej({ tex: false})
             } else {

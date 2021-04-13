@@ -48,7 +48,7 @@ function wrtoda(x, y) {
                     }
                 })
                 if (noSam === true) {
-                    return ' الكلمة موجودة بالفعل '
+                    return '  موجودة بالفعل '
                 } else {
                     var drDo = _bData[numFon].eo
                     drDo.push([y.nx, y.nn])
