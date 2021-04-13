@@ -15,7 +15,9 @@ router.get('/', (req, res) => {
             if (fCk.case === true) {
                 var username = fCk.num
                 var info = fCk.info
-                res.send(DivBodyMenu.tBody({ inf: info, un: username }))
+                var infoLog = fCk.infoLog
+                console.log(info)
+                res.send(DivBodyMenu.tBody({ info: info, un: username,infoLog : infoLog }))
             } else {
                 res.redirect('/')
             }

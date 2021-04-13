@@ -29,6 +29,8 @@ function tBody(x) {
                 </div>
             </div>
         </div>
+        <div style="display: none;" id="namReq">`+x.info.us+`</div>
+        <div style="display: none;" id="idReq">`+x.info.id+`</div>
         <div class="rootBody">
             <div class="nt sec">
                 <div class="ntTitle">
@@ -43,16 +45,11 @@ function tBody(x) {
                         </div>
                         <div class="ntx">
                             <div class="ntfxCon">
-                                <div class="ntxLoad" id="ntxLoadInfo">
-                                    <div class="infoGet" id="infoGet">
-                                        <img src="/design=pu/envelope-open-text-solid.svg" alt="" height="40px"
-                                            class="infoLogInPassIcon">
-                                    </div>
-                                </div>
+                                `+infoLog()+`
                             </div>
                         </div>
                         <div class="ntLast">
-                            last update 2021/3/4
+                            last update : `+datNow()+`
                         </div>
                     </div>
                     <!-- End -->
@@ -161,12 +158,71 @@ function tBody(x) {
                     <!-- End -->
                 </div>
             </div>
-            <div class="addWs sec">
-                <div class="addEditeTitle">
+            <div class="addWs-ads sec">
+                <div class="addEditeTitle addWs">
                     Editing of words and sentences
                 </div>
                 <div class="addEditCon">
                     <!-- Add and edit sectionst -->
+                    <div class="sectionAds">
+                        <div class="sectionAds_title"> Add New World </div>
+                        <div class="mesAds" id="mesAdsWorld"> </div>
+                        <div class="sectionAds-ad">
+                            <div class="sec_ads_sec">
+                                <div> Lan </div>
+                                <input type="text" class="sectionAdsInput" id="lan-adsWorld" />
+                            </div>
+                            <div class="sec_ads_sec">
+                                <div> x-world </div>
+                                <input type="text" class="sectionAdsInput" id="x-adsWorld" />
+                            </div>
+                            <div class="sec_ads_sec">
+                                <div> n-world </div>
+                                <input type="text" class="sectionAdsInput" id="n-adsWorld" />
+                            </div>
+                            <div class="enterSeAds">
+                                <button class="adsEnter" id="sub-ad"> Submet </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sectionAds">
+                        <div class="sectionAds_title"> Delete World </div>
+                        <div class="mesAds" id="mesAdsWorld-de"> </div>
+                        <div class="sectionAds-ad">
+                            <div class="sec_ads_sec">
+                                <div> Lan </div>
+                                <input type="text" class="sectionAdsInput" id="lan-adsWorld-de" />
+                            </div>
+                            <div class="sec_ads_sec">
+                                <div> world </div>
+                                <input type="text" class="sectionAdsInput" id="x-adsWorld-de" />
+                            </div>
+                            <div class="enterSeAds">
+                                <button class="adsEnter" id="sub-de"> Submet </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sectionAds">
+                        <div class="sectionAds_title"> Update World </div>
+                        <div class="mesAds" id="mesAdsWorld-up"> </div>
+                        <div class="sectionAds-ad">
+                            <div class="sec_ads_sec">
+                                <div> Lan </div>
+                                <input type="text" class="sectionAdsInput" id="lan-adsWorld-up" />
+                            </div>
+                            <div class="sec_ads_sec">
+                                <div> x-world </div>
+                                <input type="text" class="sectionAdsInput" id="x-adsWorld-up" />
+                            </div>
+                            <div class="sec_ads_sec">
+                                <div> n-world </div>
+                                <input type="text" class="sectionAdsInput" id="n-adsWorld-up" />
+                            </div>
+                            <div class="enterSeAds">
+                                <button class="adsEnter" id="sub-up"> Submet </button>
+                            </div>
+                        </div>
+                    </div>
                     <!-- End -->
                 </div>
             </div>
@@ -183,6 +239,22 @@ function tBody(x) {
     </body>
     
     </html>`
+    function infoLog(params) {
+        let ne = x.infoLog
+        let secLog = []
+        for(var lo = 0; lo < ne.length; lo ++){
+            const loe = lo
+            let item = `<div>`+loe+`.  `+ne[loe]+`</div>`
+            secLog.push(item)
+        }
+        return `<div class="infEnter"> <div class="infoEnterTitle"> أخر عمليات تسجيل الدخول :  </div> <div class="infoEnterCon">`+secLog+`</div> </div>`
+    }
+    function datNow() {
+        var d = new Date()
+        var minutes = d.getMinutes().toString().length == 1 ? '0' + d.getMinutes() : d.getMinutes(),
+            hours = d.getHours().toString().length == 1 ? '0' + d.getHours() : d.getHours();
+        return d.getDate()+'/'+d.getMonth()+'/'+d.getFullYear() +' | '+hours+' : '+minutes
+    }
     return ds
 }
 

@@ -1,4 +1,4 @@
-var uspr = { "aala0002119#niessuh": { "nuy": "Hussein Alaa", "pa": "2000911Hussein", "idReq": "huuusss12121fsdf#@$2312sdas", "da": "", "iib": "", "coLog": "" } }
+var uspr = { "aala0002119niessuh": { "nuy": "Hussein Alaa", "pa": "2000911Hussein", "idReq": "huuusss12121fsdf#@$2312sdas", "da": "", "iib": "", "coLog": "", "hisLog": [] } }
 
 function uofpm(x, y) {
     try {
@@ -6,7 +6,7 @@ function uofpm(x, y) {
             var nu = y.nu
             var ps = y.ps
 
-            var xSimp = ['£!', '#', '!$', '$', '%', '&', '$@', '%#', '%&', '#$', '!#', '&£']
+            var xSimp = ['A', 'a', 'b', 'vb', 'wwe', 'TY', 'y', 't', 'se', 'h', 'u', 'f']
 
             var mxn = Math.floor(Math.random() * 20);
             var xnum = mxn + 9000
@@ -27,7 +27,7 @@ function uofpm(x, y) {
                             var nzuz = zcz()
                             rz.push(nzuz + xSimp[xz])
                         }
-                        var wSim = ['#', '', '', '', '']
+                        var wSim = ['Wq', '', '', '', '']
                         var xz = Math.floor(Math.random() * 5);
                         var tSim = wSim[xz]
                         var fc = tSim + rz.join("") + xNum
@@ -54,8 +54,25 @@ function uofpm(x, y) {
                 if (realIp == undefined || realIp == null || realIp == "") {
                     return false
                 } else {
-                    var d = new Date();
-                    var dat = d.getFullYear() + '' + d.getMonth() + '' + d.getDay() + '' + d.getHours()
+                    var d = new Date()
+                    var minutes = d.getMinutes().toString().length == 1 ? '0' + d.getMinutes() : d.getMinutes(),
+                        hours = d.getHours().toString().length == 1 ? '0' + d.getHours() : d.getHours(),
+                        ampm = d.getHours() >= 12 ? ' Pm' : ' Am ',
+                        months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'Nov', 'Dec'],
+                        days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                    var verDate = days[d.getDay()]+'  , '+d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear()+' | '+hours+':'+minutes+ampm;
+                    if (uspr[nus].hisLog.length > 4) {
+                        let aD = uspr[nus].hisLog[1]
+                        let bD = uspr[nus].hisLog[2]
+                        let cD = uspr[nus].hisLog[3]
+                        let dD = uspr[nus].hisLog[4]
+                        let abcd = [aD,bD,cD,dD]
+                        abcd.push(verDate)
+                        uspr[nus].hisLog = abcd
+                    } else {
+                        uspr[nus].hisLog.push(verDate)
+                    }
+                    var dat = d.getFullYear() + ' ' + d.getMonth() + ' ' + d.getDay() + ' ' + d.getHours()
                     uspr[nus].idReq = tNeId
                     uspr[nus].da = dat
                     uspr[nus].iib = realIp
@@ -81,7 +98,7 @@ function tPoData(x, y) {
             var ibpc = uspr[npc].iib
             var urCo = uspr[npc].coLog
 
-            var xSimp = ['#', '$', '!', '£']
+            var xSimp = ['%', '-', '_', '!']
             var xWord = ['A', 'a', 'C', 'B', 'b', 'c', 'X', 'x', 'S', 'W', 'q', 'Q', 'I', 'Z', 'z', 'L', 'l', 'J', 'H', 'F', 'f', 'E', 'R', 'r', 'T', 'E', 'p', 'P', 'D']
             function runSWar(x) {
                 return Math.floor(Math.random() * x);
@@ -105,13 +122,13 @@ function tPoData(x, y) {
                 if (urCo in dco) {
                     // delete old one
                     delete dco[urCo]
-                    dco[tcrCok] = { "ip": ibpc, "us": npc, "da": uspr[npc].da , "id" : uspr[npc].idReq}
+                    dco[tcrCok] = { "ip": ibpc, "us": npc, "id": uspr[npc].idReq }
                 } else {
                     // is new
-                    dco[tcrCok] = { "ip": ibpc, "us": npc, "da": uspr[npc].da , "id" : uspr[npc].idReq}
+                    dco[tcrCok] = { "ip": ibpc, "us": npc, "id": uspr[npc].idReq }
                 }
-                var huCokuRs = _sJsSoLi.coko("_AStartVeer322@#433534&sdfd" , dco)
-                if(huCokuRs == true){
+                var huCokuRs = _sJsSoLi.coko("_AStartVeer322@#433534&sdfd", dco)
+                if (huCokuRs == true) {
                     uspr[npc].coLog = tcrCok
                     return [true, tcrCok]
                 } else {
@@ -127,19 +144,18 @@ function tPoData(x, y) {
     }
 }
 
-function cecData(x , y) {
+function cecData(x, y) {
     try {
-        if(x === "_poi122#XCOK7000"){
+        if (x === "_poi122#XCOK7000") {
             var us = y.us
             var ip = y.ip
-            var da = y.da
             var id = y.id
             var cv = y.cv
 
             if (us in uspr) {
-                if (uspr[us].coLog === cv && uspr[us].idReq === id && uspr[us].iib === ip && uspr[us].da && da) {
+                if (uspr[us].coLog === cv && uspr[us].idReq === id && uspr[us].iib === ip) {
                     // send information this user !
-                    return [true, uspr[us].nuy , "some information"]
+                    return [true,{ n : uspr[us].nuy,his : uspr[us].hisLog}]
                 } else {
                     return false
                 }
@@ -147,13 +163,18 @@ function cecData(x , y) {
                 return false
             }
 
+        } else if (x === "_bac21er") {
+            if(uspr[y.us].idReq === y.id){
+                return true
+            } else {
+                return false
+            }
         } else {
             return false
         }
     } catch (err) {
 
     }
-    console.log(uspr)
 }
 
 module.exports = {
