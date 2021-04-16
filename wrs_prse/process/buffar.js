@@ -43,7 +43,7 @@ function wrtoda(x, y) {
                 var arIt = _bData[numFon].eo
                 let noSam = false
                 arIt.forEach(r => {
-                    if (r[0] === y.nx) {
+                    if (r[0] === y.nx|| r[0] ===  y.nn || r[1] === y.nx|| r[1] ===  y.nn) {
                         noSam = true
                     }
                 })
@@ -61,7 +61,7 @@ function wrtoda(x, y) {
                 let don = false
                 let ton = 0
                 for (var de = 0; de < arIt.length; de++) {
-                    if (y.nx === arIt[de][0]) {
+                    if (y.nx === arIt[de][0] || y.nx === arIt[de][1]) {
                         don = true
                         ton = de
                     }
@@ -79,7 +79,7 @@ function wrtoda(x, y) {
                 let upon = false
                 let son = 0
                 for (var u = 0; u < arIt.length; u++) {
-                    if (arIt[u][0] === y.nx) {
+                    if (arIt[u][0] === y.nx || arIt[u][0] === y.nn || arIt[u][1] === y.nx || arIt[u][1] === y.nn) {
                         upon = true
                         son = u
                     }
@@ -100,8 +100,20 @@ function wrtoda(x, y) {
         }
     }
 }
+function xSendData(x) {
+    if (x === true) {
+        var eu = []
+        for(var eq = 0; eq < _bData.length ; eq++){
+            if(_bData[eq].exdz === false){
+                eu.push({'nam': _bData[eq].nam , 'con' : _bData[eq].eo})
+            }
+        }
+        return eu
+    }
+}
 
 module.exports = {
     bofpof,
-    wrtoda
+    wrtoda,
+    xSendData
 }

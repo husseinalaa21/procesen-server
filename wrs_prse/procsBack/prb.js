@@ -56,4 +56,19 @@ router.get('/procesenBkSetUp', (req, res) => {
     }
 })
 
+router.get('/reSendwe', (req, res) => {
+    try {
+        var nam = req.query.na
+        var isd = req.query.isdW
+        var pe = doWr.reSend({na : nam , id : isd})
+        if(pe === false){
+            res.send('false')
+        } else {
+            res.send(pe)
+        }
+    } catch {
+        res.send("false")
+    }
+})
+
 module.exports = router;

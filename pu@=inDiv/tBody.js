@@ -168,16 +168,23 @@ function tBody(x) {
                         <div class="sectionAds_title"> Add Section </div>
                         <div class="mesAds" id="mesAdsWorld"> </div>
                         <select class="form-select" aria-label="Default select example" id="adsWorldSc">
-                            <option selected value="null">Open this select menu</option>
+                            <option selected value="null">Choose a department</option>
                             <option value="procesenBkSent"> sentences </option>
                             <option value="procesenBkWords"> Word </option>
                             <option value="procesenBkResw"> Reverse meaning </option>
                         </select>
+                        <select class="form-select" aria-label="Default select example" id="lan-adsWorld">
+                            <option selected value="null"> Language </option>
+                            <option value="ar"> Arabic </option>
+                            <option value="en"> English </option>
+                        </select>
+                        <select class="form-select" aria-label="Default select example" id="teeType">
+                            <option selected value="null"> Type </option>
+                            <option value="ad"> Add </option>
+                            <option value="de"> Delete </option>
+                            <option value="up"> Update </option>
+                        </select>
                         <div class="sectionAds-ad">
-                            <div class="sec_ads_sec">
-                                <div> Lan </div>
-                                <input type="text" class="sectionAdsInput" id="lan-adsWorld" />
-                            </div>
                             <div class="sec_ads_sec">
                                 <div> x-world </div>
                                 <input type="text" class="sectionAdsInput" id="x-adsWorld" />
@@ -187,58 +194,14 @@ function tBody(x) {
                                 <input type="text" class="sectionAdsInput" id="n-adsWorld" />
                             </div>
                             <div class="enterSeAds">
-                                <button class="adsEnter" id="sub-ad"> Submet </button>
+                                <button class="adsEnter" id="sub-this"> Submet </button>
                             </div>
                         </div>
                     </div>
                     <div class="sectionAds">
-                        <div class="sectionAds_title"> Delete Section </div>
-                        <div class="mesAds" id="mesAdsWorld-de"> </div>
-                        <select class="form-select" aria-label="Default select example" id="adsWorldSc-de">
-                            <option selected value="null">Open this select menu</option>
-                            <option value="procesenBkSent"> sentences </option>
-                            <option value="procesenBkWords"> Word </option>
-                            <option value="procesenBkResw"> Reverse meaning </option>
-                        </select>
-                        <div class="sectionAds-ad">
-                            <div class="sec_ads_sec">
-                                <div> Lan </div>
-                                <input type="text" class="sectionAdsInput" id="lan-adsWorld-de" />
-                            </div>
-                            <div class="sec_ads_sec">
-                                <div> world </div>
-                                <input type="text" class="sectionAdsInput" id="x-adsWorld-de" />
-                            </div>
-                            <div class="enterSeAds">
-                                <button class="adsEnter" id="sub-de"> Submet </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sectionAds">
-                        <div class="sectionAds_title"> Update Section </div>
-                        <div class="mesAds" id="mesAdsWorld-up"> </div>
-                        <select class="form-select" aria-label="Default select example" id="adsWorldSc-up">
-                            <option selected value="null">Open this select menu</option>
-                            <option value="procesenBkSent"> sentences </option>
-                            <option value="procesenBkWords"> Word </option>
-                            <option value="procesenBkResw"> Reverse meaning </option>
-                        </select>
-                        <div class="sectionAds-ad">
-                            <div class="sec_ads_sec">
-                                <div> Lan </div>
-                                <input type="text" class="sectionAdsInput" id="lan-adsWorld-up" />
-                            </div>
-                            <div class="sec_ads_sec">
-                                <div> x-world </div>
-                                <input type="text" class="sectionAdsInput" id="x-adsWorld-up" />
-                            </div>
-                            <div class="sec_ads_sec">
-                                <div> n-world </div>
-                                <input type="text" class="sectionAdsInput" id="n-adsWorld-up" />
-                            </div>
-                            <div class="enterSeAds">
-                                <button class="adsEnter" id="sub-up"> Submet </button>
-                            </div>
+                        <div class="sectionAds_title"> Arrays </div>
+                        <div class="sectionSre" id="sectionSre">
+    
                         </div>
                     </div>
                     <!-- End -->

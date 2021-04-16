@@ -122,7 +122,6 @@
 }
 .sec_ads_sec {
     display: flex;
-    max-width: 400px;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -148,16 +147,19 @@
 .sec_ads_sec input {
     outline: none;
     width: auto;
-    background-color: #ebebeb;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
     border-radius:  0 4px 4px 0;
     width: 100%;
+    border: 1px solid #ced4da;
 }
 .sec_ads_sec div {
     width: 30%;
     max-width: 80px;
     text-align: center;
     border-radius:  4px 0 0 4px;
-    background-color: #bdc0c4;
+    background-color: #e8e9eb;
+    border: 1px solid #ced4da;
+    border-right: 0;
 }
 .sec_ads_sec input:focus {
     outline: none;

@@ -84,7 +84,7 @@ router.get('/procsentEn/sen/', (req, res) => {
         var procesen = new Promise((res, rej) => {
             var swn = pro.sen({ xs, arA, arB, trs, arBNew, sysDatA: coffeA, sysDatB: coffeB })
             if (swn !== false) {
-                res({ tex: swn[0].replace(/\u00A3/g,'0S1').replace(/\$/g,'0D8').replace(/\&/g,'0W1').replace(/\#/g,'0X6').replace(/\%/g,'0G2'), texs: swn[1] })
+                res({ tex: swn[0].replace(/\u00A3/g,'0S1').replace(/\$/g,'0D8').replace(/\&/g,'0W1').replace(/\#/g,'0X6').replace(/\%/g,'0G2'), texs: swn[1].replace(/\u00A3/g,'0S1').replace(/\$/g,'0D8').replace(/\&/g,'0W1').replace(/\#/g,'0X6').replace(/\%/g,'0G2').replace(/\*/g,'7H0').replace(/\#/g,'8I9')})
                 // Proplem from weting processein function
                 rej({ tex: false})
             } else {
@@ -93,7 +93,7 @@ router.get('/procsentEn/sen/', (req, res) => {
             }
         })
         procesen.then(e => {
-            res.send([e.tex])
+            res.send([e.tex, e.texs])
         }).catch(e => {
             res.send([e.tex])
         })

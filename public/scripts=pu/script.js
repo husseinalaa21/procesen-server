@@ -4,71 +4,65 @@ var addSec = "Added successfully"
 var nam = document.getElementById("namReq").innerText
 var id = document.getElementById("idReq").innerText
 var ur = 'http://localhost:4200/bc/'
-
-document.getElementById('sub-ad').addEventListener('click', e => {
+setTimeout(() => {
+    getArewSecion()
+}, 100);
+document.getElementById('sub-this').addEventListener('click', e => {
+    var teety = document.getElementById("teeType").value
     let xworld = document.getElementById("x-adsWorld").value
     let nworld = document.getElementById("n-adsWorld").value
     let lan = document.getElementById("lan-adsWorld").value
     var tyKe = document.getElementById("adsWorldSc").value
-    if (xworld.length > 0 && nworld.length > 0 && lan.length > 0 && tyKe !== "null") {
-        fetch(ur +tyKe+ '/?ty=ad&xwor=' + xworld + '&nwor=' + nworld + '&lan=' + lan + '&na=' + nam + '&isdW=' + id)
+    var xs = false
+    if (teety === 'ad' || teety === 'up') {
+        if (nworld.length > 0) {
+            xs = true
+        } else {
+            xs = false
+        }
+    } else if (teety === 'de') {
+        xs = true
+    } else {
+        xs = false
+    }
+    if (xworld.length > 0 && xs === true && lan !== "null" && tyKe !== "null" && teety !== "null") {
+        fetch(ur + tyKe + '/?ty=' + teety + '&xwor=' + xworld + '&nwor=' + nworld + '&lan=' + lan + '&na=' + nam + '&isdW=' + id)
             .then(response => response.text())
             .then(response => {
                 document.getElementById('mesAdsWorld').innerHTML = response
                 clenUp('mesAdsWorld')
+                getArewSecion()
             })
             .catch((error) => {
                 document.getElementById('mesAdsWorld').innerHTML = errRes
                 clenUp('mesAdsWorld')
+                getArewSecion()
             });
     } else {
         document.getElementById('mesAdsWorld').innerHTML = errLen
         clenUp('mesAdsWorld')
     }
 })
-document.getElementById('sub-de').addEventListener('click', e => {
-    let xworld = document.getElementById("x-adsWorld-de").value
-    let lan = document.getElementById("lan-adsWorld-de").value
-
-    if (xworld.length > 0 && lan.length > 0 && tyKe !== "null") {
-        var tyKe = document.getElementById("adsWorldSc-de").value
-        fetch(ur +tyKe+ '/?ty=de&xwor=' + xworld + '&nwor=' + ' ' + '&lan=' + lan + '&na=' + nam + '&isdW=' + id)
-            .then(response => response.text())
-            .then(response => {
-                document.getElementById('mesAdsWorld-de').innerHTML = response
-                clenUp('mesAdsWorld-de')
-            })
-            .catch((error) => {
-                document.getElementById('mesAdsWorld-de').innerHTML = errRes
-                clenUp('mesAdsWorld-de')
-            });
-    } else {
-        document.getElementById('mesAdsWorld-de').innerHTML = errLen
-        clenUp('mesAdsWorld-de')
-    }
-})
-document.getElementById('sub-up').addEventListener('click', e => {
-    let xworld = document.getElementById("x-adsWorld-up").value
-    let nworld = document.getElementById("n-adsWorld-up").value
-    let lan = document.getElementById("lan-adsWorld-up").value
-
-    if (xworld.length > 0 && nworld.length > 0 && lan.length > 0 && tyKe !== "null") {
-        var tyKe = document.getElementById("adsWorldSc-up").value
-        fetch(ur +tyKe+ '/?ty=up&xwor=' + xworld + '&nwor=' + nworld + '&lan=' + lan + '&na=' + nam + '&isdW=' + id)
-            .then(response => response.text())
-            .then(response => {
-                document.getElementById('mesAdsWorld-up').innerHTML = response
-                clenUp('mesAdsWorld-up')
-            })
-            .catch((error) => {
-                document.getElementById('mesAdsWorld-up').innerHTML = errRes
-                clenUp('mesAdsWorld-up')
-            });
-    } else {
-        document.getElementById('mesAdsWorld-up').innerHTML = errLen
-        clenUp('mesAdsWorld-up')
-    }
-})
+function getArewSecion() {
+    document.getElementById('sectionSre').innerHTML = ""
+    fetch(ur + 'reSendwe' + '?na=' + nam + '&isdW=' + id)
+        .then(res => res.json())
+        .then(res => {
+            for(var e =0;e < res.length; e ++){
+                const re = e
+                setItm(res[re].nam , res[re].con)
+            }
+            function setItm(x,y) {
+                var m = document.createElement("div");
+                m.className = "itwe"
+                m.innerHTML = '<div class="secTi">'+x+'</div>'+'<div class"secCon">'+y.toString()+'</div>';
+                document.getElementById('sectionSre').append(m)
+            }
+        })
+        .catch((error) => {
+            document.getElementById('sectionSre').innerHTML = error
+        });
+}
 function clenUp(x) {
     setTimeout(() => {
         document.getElementById(x).innerHTML = ''

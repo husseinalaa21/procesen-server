@@ -91,6 +91,19 @@ function ccwss() {
         }
     }
 }
+function reSend(y) {
+    try {
+        var verInfo = jBasicMain.cecData("_bac21er", { us: y.na, id: y.id })
+        if (verInfo === true) {
+            var pove = procwrit.xSendData(true)
+            return pove
+        } else {
+            return false
+        }
+    } catch {
+        return false
+    }
+}
 function setUpData(y) {
     try {
         var verInfo = jBasicMain.cecData("_bac21er", { us: y.na, id: y.id })
@@ -107,5 +120,6 @@ function setUpData(y) {
 module.exports = {
     doWr,
     doSen,
-    setUpData
+    setUpData,
+    reSend
 }
