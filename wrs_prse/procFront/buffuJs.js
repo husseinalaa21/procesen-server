@@ -16,6 +16,7 @@ function buffuJs(x, y) {
     } else {
         // SEND DATA A (FROM SYSTEM [NORMAL]) OR B ( FROM SYSTEM AND CLINT [PLUS] )
         if (y === true) {
+            
             // MEAN (A)
             var basArr = []
             buffD.forEach(num => {
