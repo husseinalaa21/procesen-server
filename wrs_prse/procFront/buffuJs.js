@@ -29,7 +29,7 @@ function buffuJs(x, y) {
             var edArr = []
             buffD.forEach(num => {
                 if (num.exdz === false) {
-                    edArr.push({ ex: num.ex, eo: num.eo })
+                    edArr.push({ ex: num.ex, eo: num.eo, xvy: true })
                 }
             })
             return edArr
