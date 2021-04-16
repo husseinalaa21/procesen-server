@@ -51,7 +51,7 @@ function sen(tee) {
             let reLe = new RegExp(basB[rn].eo, 'g')
             // ## mean staer Or <span> and ### mean end Or </span>
             tezx = tezx.replace(reLe, "")
-            ttezx = ttezx.replace(reLe, "#" + basB[rn].eo + "*")
+            ttezx = ttezx.replace(reLe, "*#*" + basB[rn].eo + "#*#")
             // class="deWor"
         } else if (basB[rn].ex === false && arB[rn] === true && basB[rn].xvy === true) {
             // mean change x to y and change y to x (tow way)
@@ -76,7 +76,7 @@ function sen(tee) {
                     stro.forEach(re => {
                         let vx = new RegExp(re.v, 'g')
                         tezx = tezx.replace(vx, re.n)
-                        ttezx = ttezx.replace(vx, re.n + "#" + re.ol + "*")
+                        ttezx = ttezx.replace(vx, re.n + "*#*" + re.ol + "#*#")
                     })
                 }
             }
@@ -87,7 +87,7 @@ function sen(tee) {
             let relle = new RegExp(wx[0], 'g')
             if ((relle.test(tezx)) === true) {
                 tezx = tezx.replace(relle, wx[1])
-                ttezx = ttezx.replace(relle, wx[1] + "#" + wx[0] + "*")
+                ttezx = ttezx.replace(relle, wx[1] + "*#*" + wx[0] + "#*#")
             }
         }
     }
