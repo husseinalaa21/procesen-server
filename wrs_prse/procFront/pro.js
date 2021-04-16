@@ -94,6 +94,7 @@ function sen(tee) {
     // PREPERED DATA TO SEND
     return [tezx, ttezx]
 }
+
 module.exports = {
     sen
 }
