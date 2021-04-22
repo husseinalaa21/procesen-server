@@ -25,6 +25,7 @@ function sen(tee) {
         if (arA[na] === true) {
             let vdv = new RegExp(sysA[na].exdz, 'g');
             tezx = tezx.replace(vdv, "")
+            ttezx = ttezx.replace(vdv, "")
         }
     }
     // IF USER WANT DELETED ELSE
