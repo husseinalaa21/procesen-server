@@ -16,7 +16,7 @@ function sen(tee) {
         })
     }
     // CHECKS SECURITE ARRAY *A + *B
-    if (sysA.length !== arA && basB.length !== arB.length) {
+    if (sysA.length !== arA.length && basB.length !== arB.length) {
         return false
     }
     // START PROCESSING (A*1)
@@ -82,13 +82,14 @@ function sen(tee) {
                 }
             }
         } else if (basB[rn].ex === false && arB[rn] === true && basB[rn].xvy === false) {
-            // mean cjust change x to y (one way)
-            var stro = []
-            let wx = basB[rn].eo[0]
-            let relle = new RegExp(wx[0], 'g')
-            if ((relle.test(tezx)) === true) {
-                tezx = tezx.replace(relle, wx[1])
-                ttezx = ttezx.replace(relle, wx[1] + "*#*" + wx[0] + "#*#")
+            // mean just change x to y (one way)
+            for (var wc = 0; wc < basB[rn].eo.length; wc++) {
+                let wx = basB[rn].eo[wc]
+                let relle = new RegExp(wx[0], 'g')
+                if ((relle.test(tezx)) === true) {
+                    tezx = tezx.replace(relle, wx[1])
+                    ttezx = ttezx.replace(relle, wx[1] + "*#*" + wx[0] + "#*#")
+                }
             }
         }
     }

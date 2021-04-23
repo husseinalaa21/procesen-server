@@ -31,10 +31,8 @@ router.get('/procsentAr', (req, res) => {
 })
 
 router.get('/procsentAr/sen/', (req, res) => {
-    var coffeA = psc.buffuJs(false, true)
-    var coffeB = psc.buffuJs(false, false)
-    var rr = "<div class='errTextArea'> A problem occurred, there is an error in the input process, either with the input elements, or you entered an invalid value, or you tried to enter invalid functions to delete or modify, a notification has been sent to the programmers and they will work on solving the problem soon . </div> <div class='listErrInfo'> <p class='titleErr'> Please follow one of the following options : </p> <ul class='ulErr'> <li>Please check the text settings entered by you . </li> <li> To Reload page <a href='/'>click here</a> </li></ul> </div>"
-
+    var coffeA = pscar.buffuJs(false, true)
+    var coffeB = pscar.buffuJs(false, false)
     try {
         var tDe = JSON.parse(req.query.pr)
         var xs = tDe[0].replace(/0S1/g, '£').replace(/0D8/g, '$').replace(/0W1/g, '&').replace(/0X6/g, '#').replace(/0G2/g, '%'),
@@ -46,7 +44,7 @@ router.get('/procsentAr/sen/', (req, res) => {
         var procesen = new Promise((res, rej) => {
             var swn = pro.sen({ xs, arA, arB, trs, arBNew, sysDatA: coffeA, sysDatB: coffeB })
             if (swn !== false) {
-                res({ tex: swn[0].replace(/\u00A3/g, '0S1').replace(/\$/g, '0D8').replace(/\&/g, '0W1').replace(/\#/g, '0X6').replace(/\%/g, '0G2'), texs: swn[1].replace(/\u00A3/g, '0S1').replace(/\$/g, '0D8').replace(/\&/g, '0W1').replace(/\#/g, '0X6').replace(/\%/g, '0G2').replace(/\*/g, '7H0').replace(/\#/g, '8I9') })
+                res({ tex: swn[0].replace(/\u00A3/g, '0S1').replace(/\$/g, '0D8').replace(/\&/g, '0W1').replace(/\#/g, '0X6').replace(/\%/g, '0G2'), texs: swn[1].replace(/\u00A3/g, '0S1').replace(/\$/g, '0D8').replace(/\&/g, '0W1').replace(/\#/g, '0X6').replace(/\%/g, '0G2').replace(/\*/g, '7H0') })
                 // Proplem from weting processein function
                 rej({ tex: false })
             } else {
