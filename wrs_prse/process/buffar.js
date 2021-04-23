@@ -17,9 +17,9 @@ var _bData = [
     { "exdz": '[\\]|\[]', "nam": ' أقواس مربعة ' },
     { "exdz": '\n', "nam": ' سطور ' },
     { "exdz": false, "nam": ' أزالة الاقتباسات ', "ex": true, "eo": '[\[+(?=0|1|2|3|4|5|6|7|8|9|٠|٩|٨|٧|٦|٥|٤|٣|٢|١)\]+]' },
-    { "exdz": false, "nam": ' (العربية) معالجة الكلمات ', "ex": false, "xvy" : true, "eo": [['مرحبا', 'هاي'], ["كيف حالك", "كيف هو حالك"]] },
-    { "exdz": false, "nam": ' (العربية) معالجة الجمل ', "ex": false, "xvy" : true, "eo": [['لا تحتوي', 'لا تمتلك'], ["لا يستطيع", "لا يقدر"]] },
-    { "exdz": false, "nam": ' تحويل الاحرف العربية الى احرف أنجليزية ', "ex": false, "xvy" : true, "eo": [['٠','0'],['١','1'],['٢','2'],['٣','3'],['٤','4'],['٥','5'],['٦','6'],['٧','7'],['٨','8'],['٩','9']] }
+    { "exdz": false, "nam": ' (العربية) معالجة الكلمات ', "ex": false, "xvy": true, "eo": [['مرحبا', 'هاي'], ["كيف حالك", "كيف هو حالك"]] },
+    { "exdz": false, "nam": ' (العربية) معالجة الجمل ', "ex": false, "xvy": true, "eo": [['لا تحتوي', 'لا تمتلك'], ["لا يستطيع", "لا يقدر"]] },
+    { "exdz": false, "nam": ' تحويل الاحرف العربية الى احرف أنجليزية ', "ex": false, "xvy": true, "eo": [['٠', '0'], ['١', '1'], ['٢', '2'], ['٣', '3'], ['٤', '4'], ['٥', '5'], ['٦', '6'], ['٧', '7'], ['٨', '8'], ['٩', '9']] }
 ]
 function bofpof(x) {
     if (x === true) {
@@ -44,7 +44,7 @@ function wrtoda(x, y) {
                 var arIt = _bData[numFon].eo
                 let noSam = false
                 arIt.forEach(r => {
-                    if (r[0] === y.nx|| r[0] ===  y.nn || r[1] === y.nx|| r[1] ===  y.nn) {
+                    if (r[0] === y.nx || r[0] === y.nn || r[1] === y.nx || r[1] === y.nn) {
                         noSam = true
                     }
                 })
@@ -85,7 +85,7 @@ function wrtoda(x, y) {
                         son = u
                     }
                 }
-                if(upon === true){
+                if (upon === true) {
                     arIt[son][0] = y.nx
                     arIt[son][1] = y.nn
                     _bData[numFon].eo = arIt
@@ -104,9 +104,9 @@ function wrtoda(x, y) {
 function xSendData(x) {
     if (x === true) {
         var eu = []
-        for(var eq = 0; eq < _bData.length ; eq++){
-            if(_bData[eq].exdz === false){
-                eu.push({'nam': _bData[eq].nam , 'con' : _bData[eq].eo})
+        for (var eq = 0; eq < _bData.length; eq++) {
+            if (_bData[eq].exdz === false) {
+                eu.push({ 'nam': _bData[eq].nam, 'con': _bData[eq].eo })
             }
         }
         return eu
