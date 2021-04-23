@@ -17,8 +17,8 @@ var _bData = [
     { "exdz": '[\\]|\[]', "nam": ' Square brackets ' },
     { "exdz": '\n', "nam": ' Lins ' },
     { "exdz": false, "nam": ' Remove quotes ', "ex": true, "eo": '[\[+(?=0|1|2|3|4|5|6|7|8|9|٠|٩|٨|٧|٦|٥|٤|٣|٢|١)\]+]' },
-    { "exdz": false, "nam": ' Word processing ( English ) ', "ex": false, "eo": [['Go', 'Run'], ["Trump", "Biden"]] },
-    { "exdz": false, "nam": ' Sentences processing ( English ) ', "ex": false, "eo": [['hello ,', 'hi ,'], ["how old are you", "What is your age"]] }
+    { "exdz": false, "nam": ' Word processing ( English ) ', "ex": false, "xvy" : true, "eo": [['Go', 'Run'], ["Trump", "Biden"]] },
+    { "exdz": false, "nam": ' Sentences processing ( English ) ', "ex": false, "xvy" : true, "eo": [['hello ,', 'hi ,'], ["how old are you", "What is your age"]] }
 ]
 
 function bofpof(x) {
